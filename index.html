@@ -71,6 +71,17 @@ ctx.lineTo(540,540);
 ctx.stroke();
 ctx.closePath();
 
+//rectangulo de colores
+
+ctx.beginPath();
+const grd = ctx.createLinearGradient(100, 220, 40, 248);
+grd.addColorStop(0, "blue");
+grd.addColorStop(0.5, "yellow");
+grd.addColorStop(1, "red");
+
+
+ctx.fillStyle = grd;
+ctx.fillRect(100, 500, 250, 130);
 </script>
 </body>
 </html>
