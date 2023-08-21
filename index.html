@@ -23,15 +23,21 @@ var color = "rgba(13,242,23,0.5)";
 canvas.addEventListener("click", (e) => {
     console.log("Hola")
     console.log(e);
-    
-    ctx.fill();
-    
     ctx.beginPath();
+    ctx.fill(); 
     ctx.arc(e.layerX, e.layerY, 90, 40, 0, 2 * Math.PI);
-    ctx.stroke();
-
-    
-    ctx.closePath()});
+    ctx.closePath();
+    if(figura){
+            ctx.beginPath();
+            ctx.arc(e.layerX,e.layerY,90, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();}
+            
+            else{
+            ctx.fillRect(e.layerX-50,e.layerY-50,120,120)
+            ctx.strokeRect(e.layerX-50,e.layerY-50,120,120)
+        }
+    });
 
     function random_rgba() {
     var o = Math.round, r = Math.random, s = 255;
@@ -55,6 +61,7 @@ canvas.addEventListener("click", (e) => {
         console.log("mouseout")
 
         figura =!figura;
+        
     });
 
 
