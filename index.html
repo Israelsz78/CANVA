@@ -39,14 +39,16 @@ document.addEventListener ("keydown",(e) => {
         break;
     };
 
-    ctx.fillStyle = random_rgba();
-
     repaint();
 
 });
 
 function repaint(){
 
+    ctx.fillStyle = "white";
+    ctx.fillRect (0,0,1100,1100);
+
+    ctx.fillStyle = random_rgba();
     ctx.fillRect(x,y,50,50)
     ctx.strokeRect(x,y,50,50)
 }
