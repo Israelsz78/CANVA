@@ -3,212 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CANVA</title>
+    <title>AVATAR</title>
 </head>
-
 <body>
-   <canvas id="canvas" width="1100" height="1100" >  </canvas>
+    <canvas id="canvas" width="1100" height="1100" >  </canvas>
    <style> #canvas{
     border: 2px solid #000
     }
     </style>
+    <script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
     
-    <script >
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-var x = 225, y = 255;
-
-document.addEventListener ("keydown",(e) => {
-    console.log(e)
-
-    switch(e.keyCode){
-        case 87:
-            y -= 10;
-        break;
-
-        case 83:
-            y += 10;
-        break;
-
-        case 68:
-            x += 10;
-        break;
-
-        case 65:
-            x -= 10;
-        break;
-    };
-
-    repaint();
-
-});
-
-function repaint(){
-
-    ctx.fillStyle = "white";
-    ctx.fillRect (0,0,1100,1100);
-
-    ctx.fillStyle = random_rgba();
-    ctx.fillRect(x,y,50,50)
-    ctx.strokeRect(x,y,50,50)
-}
-
-function random_rgba() {
-    var o = Math.round, r = Math.random, s = 255;
-    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
-}
-/*var figura = true;
-var color = "rgba(13,242,23,0.5)";
-var dibujo = false;
-
-
-
-canvas.addEventListener("click", (e) => {
-    console.log("Hola")
-    console.log(e);
+    ctx.fillStyle = "#fcb88a"
+    ctx.strokeStyle = "black"
     ctx.beginPath();
-    ctx.fill(); 
-    ctx.arc(e.layerX, e.layerY, 90, 40, 0, 2 * Math.PI);
+    ctx.arc(535, 200, 100, 0, 2 * Math.PI);
+    ctx.fillRect(490, 280, 85, 30);
+    ctx.fill();
     ctx.closePath();
-    if(figura){
-            ctx.beginPath();
-            ctx.arc(e.layerX,e.layerY,90, 0, 2 * Math.PI);
-            ctx.fill();
-            ctx.stroke();}
-            
-            else{
-            ctx.fillRect(e.layerX-50,e.layerY-50,120,120)
-            ctx.strokeRect(e.layerX-50,e.layerY-50,120,120)
-        }
-    });
 
-    function random_rgba() {
-    var o = Math.round, r = Math.random, s = 255;
-    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
-}
+    ctx.fillStyle = "#fcb88a"
+    ctx.strokeStyle = "black"
+    ctx.beginPath();
+    ctx.arc(275, 510, 25, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.closePath();
 
-canvas.addEventListener("mousedown", (e) => {
+    ctx.fillStyle = "#fcb88a"
+    ctx.strokeStyle = "black"
+    ctx.beginPath();
+    ctx.arc(767, 530, 25, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.closePath();
 
-dibujo = true;
-ctx.beginPath();
-ctx.moveTo(e.layerX, e.layerY);
+    ctx.fillStyle = "black"
+    ctx.strokeStyle = "black"
+    ctx.beginPath();
+    ctx.arc(500, 180, 10, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
 
-});
-canvas.addEventListener("mousemove", (e) => {
-        if (!dibujo) return;
+    ctx.beginPath();
+    ctx.arc(565, 180, 10, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
 
-        ctx.lineTo(e.layerX, e.layerY);
-        ctx.stroke();
-    });
+    ctx.beginPath();
+    ctx.moveTo(470,220);
+    ctx.lineTo(525, 265);
+    ctx.lineTo(570, 235);
+    ctx.stroke();
+    ctx.closePath();
 
-    canvas.addEventListener("mouseup", () => {
-        dibujo = false;
-        ctx.closePath();
-    });
+    ctx.fillStyle = "black";
+    ctx.fillRect(410, 310, 250, 250);
 
-    canvas.addEventListener("mouseover",  (e) => {
-        console.log("mouseover")
+    ctx.fillStyle = "#c6c6c6";
+    ctx.fillRect(490, 310, 85, 130);
 
-        ctx.fillStyle = color;
-        color = random_rgba();
-});
+    ctx.fillStyle = "black";
+    ctx.fillRect(520, 310, 20, 120);
 
-    canvas.addEventListener("mouseout",  (e) => {
-        console.log("mouseout")
-        figura =!figura;  
-    });
+    ctx.fillStyle = "#2c2422";
+    ctx.fillRect(500, 810, -110, 35);
 
+    ctx.fillStyle = "#2c2422";
+    ctx.fillRect(570, 810, 110, 35);
 
-/*ctx.fillStyle = "green";
-ctx.fillRect(10, 10, 100, 100);
+    ctx.fillStyle = "black";
+    ctx.fillRect(400, 130, 270, 5);
 
-ctx.fillStyle = "blue";
-ctx.fillRect(90, 90, 100, 100);
+    ctx.fillStyle = "black";
+    ctx.fillRect(430, 55, 200, 75);
 
-ctx.fillStyle = "red";
-ctx.fillRect(170, 170, 100, 100);
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.rotate(40 * Math.PI / 180);
+    ctx.fillRect(515, -30, 45, 220);
+    ctx.closePath();
 
-//linea 
-ctx.beginPath();
-ctx.moveTo(185,10);
-ctx.lineTo(185, 65);
-ctx.lineTo(125, 65);
-ctx.fill();
-ctx.stroke();
-ctx.closePath();
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.rotate(40 * Math.PI / 360);
+    ctx.fillRect(600, -420, 220, 45);
+    ctx.closePath();
 
+    ctx.fillStyle = "black"
+    ctx.rotate(60 * Math.PI / 360);
+    ctx.fillRect(560, -660, 250, 250);
 
-ctx.beginPath();
-ctx.moveTo(312,365);
-ctx.lineTo(400,460);
-ctx.lineTo(300,460);
-ctx.fill();
-ctx.moveTo(400,400);
-ctx.lineTo(280,260);
-ctx.stroke();
-ctx.closePath();
+    ctx.fillStyle = "white"
+    ctx.rotate(0 * Math.PI / 360);
+    ctx.fillRect(560, -570, 250, 70);
 
-//circulo
-ctx.fillStyle = "blue"
-ctx.strokeStyle = "red"
-ctx.beginPath();
-ctx.arc(435, 110, 40, 0, 2 * Math.PI);
-ctx.fill();
-ctx.stroke();
-ctx.closePath();
+    
 
-ctx.strokeStyle = "red"
-ctx.beginPath();
-ctx.arc(295, 110, 40, 0, 2 * Math.PI);
-ctx.stroke();
-ctx.closePath();
-
-//texto
-ctx.beginPath();
-ctx.font = "30px Georgia";
-ctx.fillText("Hola mundo", 40, 350);
-ctx.closePath();
-
-ctx.strokeStyle = "#00275a"
-ctx.beginPath();
-ctx.moveTo(400,460);
-ctx.lineTo(540,540);
-ctx.stroke();
-ctx.closePath();
-
-//rectangulo de colores
-
-ctx.beginPath();
-const grd = ctx.createLinearGradient(100, 220, 40, 248);
-grd.addColorStop(0, "blue");
-grd.addColorStop(0.5, "yellow");
-grd.addColorStop(1, "red");
-
-
-ctx.fillStyle = grd;
-ctx.fillRect(100, 500, 250, 130);
-ctx.closePath();
-
-//Circulo de colores
-ctx.beginPath();
-const rad = ctx.createRadialGradient(175,845, 100, 175, 830, 165);
-rad.addColorStop(0, "white");
-rad.addColorStop(0.1, "black");
-rad.addColorStop(1, "gray");
-
-ctx.fillStyle = rad;
-ctx.fillRect(10, 700, 360, 250);
-
-ctx.closePath();
-
-const img = new Image();
-img.src = "duck.jpg";
-
-img.onload = function(){
-ctx.drawImage(img, 600, 80, 250, 250);
-}*/
-
-
-</script>
+    
+    </script>
+    
 </body>
 </html>
